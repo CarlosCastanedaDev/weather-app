@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <title>Weather App</title>
+  </head>
+  <body class="bg-black">
+    <div
+      id="main"
+      class="flex flex-col items-center bg-gradient-to-br from-sky-300 to-blue-500 m-4 rounded-xl w-full max-w-[370px] h-[680px] space-y-8">
+      <div id="box">
+        <input
+          id="search"
+          class="p-2 mt-12 rounded-xl bg-slate-100 opacity-40 font-['Arvo']"
+          type="text"
+          autocomplete="off"
+          class=""
+          placeholder="Search for a city..." />
+      </div>
+      <div id="second" class="flex flex-col space-y-8">
+        <div id="location" class="space-y-4">
+          <div id="city" class="text-white text-4xl text-center font-['Arvo']">
+            Berwyn
+          </div>
+          <div id="date" class="text-white text-md font-['Arvo'] text-center">
+            gsdgdsgsdfgfdg
+          </div>
+        </div>
+        <div id="current" class="flex flex-col space-y-2">
+          <div
+            id="temp"
+            class="text-white text-7xl text-center font-bold font-['Arvo']">
+            70
+          </div>
+          <div
+            id="feelslike"
+            class="text-white text-lg text-center font-['Arvo'] italic">
+            feels like
+          </div>
+          <div class="flex items-center justify-center">
+            <img class="" id="icon" src="" alt="" />
+          </div>
+          <div
+            id="weather"
+            class="text-white italic text-3xl font-['Arvo'] text-center">
+            Sunny
+          </div>
+          <div id="hi-low" class="text-white text-xl font-['Arvo'] text-center">
+            54 / 65
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

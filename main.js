@@ -13,6 +13,10 @@ function setQuery(e) {
   }
 }
 
+let now = new Date();
+let date = document.getElementById('date');
+date.innerText = dateBuilder(now);
+
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=imperial&appid=${api.key}`)
     .then((weather) => {
@@ -26,9 +30,9 @@ function displayResults(weather) {
   let city = document.getElementById('city');
   city.innerText = `${weather.name}`;
 
-  let now = new Date();
-  let date = document.getElementById('date');
-  date.innerText = dateBuilder(now);
+  //   let now = new Date();
+  //   let date = document.getElementById('date');
+  //   date.innerText = dateBuilder(now);
 
   let temp = document.getElementById('temp');
   temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F</span>`;
@@ -44,40 +48,40 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
 
   let hiLow = document.getElementById('hi-low');
-  hiLow.innerText = `H:${Math.round(weather.main.temp_max)}°F    L:${Math.round(
+  hiLow.innerText = `H:${Math.round(weather.main.temp_max)}°    L:${Math.round(
     weather.main.temp_min
-  )}°F`;
+  )}°`;
 }
 
-function dateBuilder(d) {
-  let months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  let days = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+// function dateBuilder(d) {
+//   let months = [
+//     'January',
+//     'February',
+//     'March',
+//     'April',
+//     'May',
+//     'June',
+//     'July',
+//     'August',
+//     'September',
+//     'October',
+//     'November',
+//     'December',
+//   ];
+//   let days = [
+//     'Sunday',
+//     'Monday',
+//     'Tuesday',
+//     'Wednesday',
+//     'Thursday',
+//     'Friday',
+//     'Saturday',
+//   ];
 
-  let day = days[d.getDay()];
-  let date = d.getDate();
-  let month = months[d.getMonth()];
-  let year = d.getFullYear();
+//   let day = days[d.getDay()];
+//   let date = d.getDate();
+//   let month = months[d.getMonth()];
+//   let year = d.getFullYear();
 
-  return `${day} ${month} ${date}, ${year}`;
-}
+//   return `${day} ${month} ${date}, ${year}`;
+// }

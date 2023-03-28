@@ -44,8 +44,8 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
 
   let hiLow = document.getElementById('hi-low');
-  hiLow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(
-    weather.main.temp_max
+  hiLow.innerText = `H:${Math.round(weather.main.temp_max)}°F    L:${Math.round(
+    weather.main.temp_min
   )}°F`;
 }
 

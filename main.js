@@ -9,7 +9,7 @@ function setQuery(e) {
 }
 
 function getResults(query) {
-  fetch(`${api.base}weather?q=${query}&units=imperial&appid=${api.key}`)
+  fetch(`${BASE}weather?q=${query}&units=imperial&appid=${API_KEY}`)
     .then((weather) => {
       return weather.json();
     })

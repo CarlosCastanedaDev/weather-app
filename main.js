@@ -13,9 +13,32 @@ function setQuery(e) {
   }
 }
 
-let now = new Date();
-let date = document.getElementById('date');
-date.innerText = dateBuilder(now);
+const successCallback = (position) => {
+  //   console.log(position);
+  let lat = position.coords.latitude.toFixed(2);
+  let long = position.coords.longitude.toFixed(2);
+  getResultsLat(lat, long);
+};
+
+const errorCallback = (error) => {
+  console.error(error);
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+// let now = new Date();
+// let date = document.getElementById('date');
+// date.innerText = dateBuilder(now);
+
+function getResultsLat(lat, long) {
+  fetch(
+    `${api.base}weather?lat=${lat}&lon=${long}&units=imperial&appid=${api.key}`
+  )
+    .then((weather) => {
+      return weather.json();
+    })
+    .then(displayResults);
+}
 
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=imperial&appid=${api.key}`)

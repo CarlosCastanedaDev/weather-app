@@ -14,7 +14,7 @@ function setQuery(e) {
 }
 
 const successCallback = (position) => {
-  //   console.log(position);
+  console.log(position);
   let lat = position.coords.latitude.toFixed(2);
   let long = position.coords.longitude.toFixed(2);
   getResultsLat(lat, long);
